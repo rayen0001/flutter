@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -47,8 +48,28 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Future<void> _signInWithGoogle() async {
+
     setState(() => _loading = true);
     try {
+      if (kIsWeb) {
+        // WEB: Firebase popup login
+        GoogleAuthProvider googleProvider = GoogleAuthProvider();
+        googleProvider.addScope('email');
+
+        final userCredential =
+        await FirebaseAuth.instance.signInWithPopup(googleProvider);
+
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text("Google sign-in successful!")),
+          );
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (_) => const HomeScreen()),
+          );
+        }
+      }
+      else{
       // Trigger the authentication flow
       final GoogleSignInAccount? googleUser = await GoogleSignIn.instance.authenticate();
 
@@ -78,6 +99,7 @@ class _LoginScreenState extends State<LoginScreen> {
           MaterialPageRoute(builder: (_) => const HomeScreen()),
         );
       }
+    }
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
