@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "820031792770",
+    "project_id": "mizania-7f7c0",
+    "storage_bucket": "mizania-7f7c0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:820031792770:android:b60bf626cdc66584fa369b",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzLpmu5v8kZbGyf75TLql1gP5KHOdsdjk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:820031792770:android:f05803951e6a48affa369b",
+        "android_client_info": {
+          "package_name": "com.example.tp5"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzLpmu5v8kZbGyf75TLql1gP5KHOdsdjk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
